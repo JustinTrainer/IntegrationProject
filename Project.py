@@ -46,7 +46,7 @@ while bad_input:  # This loops until a valid input is entered.
             continue  # This safeguards against negative numbers.
         bad_input = False
     except ValueError:  # This fires if the input fails.
-        print("Please enter a whole number using integers")
+        print("Please enter a whole number using integers.")
 # The code above takes the value of the year of birth, and allows for mistakes.
 # Above is Professor Vanselow's model for error proofing code.
 
@@ -61,7 +61,7 @@ while bad_input:
             continue
         bad_input = False
     except ValueError:
-        print("Please enter a whole number using integers")
+        print("Please enter a whole number using integers.")
 # The code above aks for the current year, and tolerates errors.
 # Above is Professor Vanselow's model for error proofing an input.
 age = year_current - year_born
