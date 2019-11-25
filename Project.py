@@ -43,7 +43,7 @@ while bad_input:  # This loops until a valid input is entered.
         year_born = int(input())
         if year_born < 1889:
             print("Please enter a non-negative, reasonable year.")
-            continue   #This safeguards against negative numbers.
+            continue  # This safeguards against negative numbers.
         bad_input = False
     except ValueError:  # This fires if the input fails.
         print("Please enter a whole number using integers")
@@ -203,4 +203,4 @@ while condition:
 # The code above loops until a negative value is entered.
 # Python for Everybody.
 print()
-print("Adieu", name +"!")
+print("Adieu", name + "!")
