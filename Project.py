@@ -197,4 +197,5 @@ while condition:
         gun_dist(range)
 # The code above loops until a negative value is entered.
 # Python for Everybody.
+print()
 print("Adieu!")
