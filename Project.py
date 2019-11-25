@@ -121,7 +121,7 @@ This function provides a random message for any input.
     elif number == 5:
         print("It's a fifty-fifty.")
     elif number == 4:
-        print("There's a probably not going to happen.")
+        print("It's probably not going to happen.")
     elif number == 3:
         print("Don't bet on it.")
     elif number == 2:
