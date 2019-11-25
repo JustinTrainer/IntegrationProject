@@ -41,6 +41,9 @@ year_born = 0
 while bad_input:  # This loops until a valid input is entered.
     try:
         year_born = int(input())
+        if year_born < 1889:
+            print("Please enter a non-negative, reasonable year.")
+            continue   #This safeguards against negative numbers.
         bad_input = False
     except ValueError:  # This fires if the input fails.
         print("Please enter a whole number using integers")
@@ -53,6 +56,9 @@ year_current = 0
 while bad_input:
     try:
         year_current = int(input())
+        if year_current < 0:
+            print("Please enter a non-negative, reasonable year.")
+            continue
         bad_input = False
     except ValueError:
         print("Please enter a whole number using integers")
@@ -65,7 +71,7 @@ print(name + ", " + "you are", age, "years old.")
 # This reports the age to the user.
 
 if year_born > 2001:
-    print("You've yet to be classified by PRB.")
+    print("You've yet to be classified by the PRB article.")
     print()
 elif 2001 >= year_born >= 1983:
     print("You're in the New Boomers generation.")
@@ -93,11 +99,10 @@ else:
 
 # The above code uses the user's birth year to determine their generation.
 # Python for Everybody
-# Source http://supercentenarian-research-foundation.org/TableE.aspx
+# Source: http://supercentenarian-research-foundation.org/TableE.aspx
 # This is the information on the oldest living person.
-
-# Source https://www.prb.org/20thcenturyusgenerations/
-# This refers to the generation information
+# Source: https://www.prb.org/20thcenturyusgenerations/
+# This refers to the generation information.
 
 
 def fortune_cookie():
@@ -114,7 +119,7 @@ This function provides a random message for any input.
     elif number == 6:
         print("There's a slight possibility.")
     elif number == 5:
-        print("Its a fifty-fifty.")
+        print("It's a fifty-fifty.")
     elif number == 4:
         print("There's a probably not going to happen.")
     elif number == 3:
@@ -130,7 +135,7 @@ This function provides a random message for any input.
 # Python for Everybody.
 # The code above randomly selects a number that is correlated with a message.
 
-print("Welcome", name + ",",
+print("Welcome,", name + ",",
       "to the random probability calculator!\nType "
       + "in a situation and "
       + "the computer will tell you how likely your situation is. "
@@ -198,4 +203,4 @@ while condition:
 # The code above loops until a negative value is entered.
 # Python for Everybody.
 print()
-print("Adieu!")
+print("Adieu", name +"!")
