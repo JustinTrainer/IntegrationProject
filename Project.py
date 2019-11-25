@@ -1,92 +1,200 @@
-#Justin Trainer
-#This program will serve as an amalgamation of our class learning and will be a generally riveting program.
-import math
+"""
+__author__ = Justin Trainer
+This program is is an interactive experience that contains an age and
+generation calculator, a random probability calculator, and a ballistic
+range calculator.
+
+I used the census bureau website for information on generations, the
+Gerontology Research Group for information on the oldest living person and
+knowledge I gained from the YouTube channel Forgotten Weapons. I also
+used Python for Everybody and Professor Vanselow's instruction as a resource.
+"""
+
 import random
-print("Welcome to the project! I am Wesly the computer program and I will be guiding you through the project of Justin Trainer. \nThere are many parts to this project, illustrating the diverse nature of the learning done in the classroom!")
-print("Firstly, let's get to know each other a little better. What is your name?")
-name = input()
-print("Well," +" " + name + ", great name by the way, welcome to the project of Justin Trainer.\nThis project will serve as an amalgamation of all the things taught in the classroom.")
-print("I would like to continue to get to know you, however.\nPlease input the year in which you were born so I can calculate your age. ")
-try:
-    yearBorn = int(input())
-except:
-    print("Please enter a whole number using integers")
-    yearBorn = int(input("Re-enter the year you were born in numbers."))
+
+print(
+        "Welcome to the project! I am Wesly the computer program and "
+        + "I will be "
+        + "guiding you through the project of Justin"
+        + " Trainer. \nThere are many parts to this project, illustrating "
+        + "the diverse nature of the learning done in the "
+        + "classroom!")
+# The above code greets the user and explains the purpose of the program.
+print("Firstly, let's get to know each other a little better.")
+print("What is your name?")
+# The code above asks for the user's name.
+name = input()  # This code receives the name.
+print(
+        "Well" + " " + name + ", great name by the way, welcome to the "
+        + "project of Justin Trainer.\nThis project will "
+        + "serve as an amalgamation of "
+        + "all the things taught in the classroom.")
+# The code above continues to explain the purpose.
+print(
+        "I would like to continue to get to know you, "
+        + "however.\nPlease input the year "
+        + "in which you were born so I can calculate your age. ")
+# The code above introduces the age calculator and asks for the user's age.
+
+bad_input = True
+year_born = 0
+while bad_input:  # This loops until a valid input is entered.
+    try:
+        year_born = int(input())
+        bad_input = False
+    except ValueError:  # This fires if the input fails.
+        print("Please enter a whole number using integers")
+# The code above takes the value of the year of birth, and allows for mistakes.
+# Above is Professor Vanselow's model for error proofing code.
+
 print("Now enter the current year.")
-try:
-    yearCurrent = int(input())
-except:
-    print("Please enter a whole number using integers")
-    yearCurrent = int(input("Re-enter the current year in numbers."))
-age = yearCurrent - yearBorn
-print(name + ", " + "you are",age,"years old.")
-if yearBorn > 2001:
+bad_input = True
+year_current = 0
+while bad_input:
+    try:
+        year_current = int(input())
+        bad_input = False
+    except ValueError:
+        print("Please enter a whole number using integers")
+# The code above aks for the current year, and tolerates errors.
+# Above is Professor Vanselow's model for error proofing an input.
+age = year_current - year_born
+# This code calculates the user's age.
+
+print(name + ", " + "you are", age, "years old.")
+# This reports the age to the user.
+
+if year_born > 2001:
     print("You've yet to be classified by PRB.")
-elif yearBorn <= 2001 and yearBorn >= 1983:
+    print()
+elif 2001 >= year_born >= 1983:
     print("You're in the New Boomers generation.")
-elif yearBorn <= 1982 and yearBorn >= 1965:
+    print()
+elif 1982 >= year_born >= 1965:
     print("You're in the Generation X generation.")
-elif yearBorn <= 1964 and yearBorn >= 1946:
+    print()
+elif 1964 >= year_born >= 1946:
     print("You're in the Baby Boomers generation.")
-elif yearBorn <= 1946 and yearBorn >= 1929:
+    print()
+elif 1946 >= year_born >= 1929:
     print("You're in the Lucky Few generation.")
-elif yearBorn <= 1928 and yearBorn >= 1909:
+    print()
+elif 1928 >= year_born >= 1909:
     print("Your in the Good Warriors generation.")
-elif yearBorn <= 1908 and yearBorn >= 1890:
+    print()
+elif 1908 >= year_born >= 1890:
     print("You're in the Hard Timers generations.")
+    print()
 else:
-    print("You've seen a significant portion of history and I want to talk to you.")
-#Source https://www.prb.org/20thcenturyusgenerations/
-#It refers to the censuse bureau on the website.
-def fortuneCookie():
-    number = random.randint(0,9)     #sets number to something random
-    if number == 9:                      #these are the random options
+    print("That is impossible. The world's oldest living person, "
+          + "Kane Tanaka, was born in 1903.")
+    print()
+
+
+# The above code uses the user's birth year to determine their generation.
+# Python for Everybody
+# Source http://supercentenarian-research-foundation.org/TableE.aspx
+# This is the information on the oldest living person.
+
+# Source https://www.prb.org/20thcenturyusgenerations/
+# This refers to the generation information
+
+
+def fortune_cookie():
+    """
+This function provides a random message for any input.
+    """
+    number = random.randint(0, 9)  # This picks a random message.
+    if number == 9:
         print("It's sure to happen!")
     elif number == 8:
-        print("It's probably going to happen")
+        print("It's probably going to happen.")
     elif number == 7:
-        print("It could happen")
+        print("It could happen.")
     elif number == 6:
-        print("There's a slight possibility")
+        print("There's a slight possibility.")
     elif number == 5:
-        print("Its a fifty-fifty")
+        print("Its a fifty-fifty.")
     elif number == 4:
-        print("There's a probably not going to happen")
+        print("There's a probably not going to happen.")
     elif number == 3:
-        print("Don't bet on it")
+        print("Don't bet on it.")
     elif number == 2:
-        print("Its really not going to happen")
+        print("Its really not going to happen.")
     elif number == 1:
-        print("Don't even think about it")
+        print("Don't even think about it.")
     else:
-        print("There's literally a zero percent chance")
-print("Wecome", name + ",", "to the random probability calculator!\nHow it works is you will type in a situation and the computer will tell you if its likely to happen \nDon't actually pay any attention to any of theanswers you get.")
+        print("There's literally a zero percent chance.")
+
+
+# Python for Everybody.
+# The code above randomly selects a number that is correlated with a message.
+
+print("Welcome", name + ",",
+      "to the random probability calculator!\nType "
+      + "in a situation and "
+      + "the computer will tell you how likely your situation is. "
+      + "\nWARNING: Do NOT give credence to any"
+      + " answers you get.")
+# The code above introduces the random probability calculator.
 condition = True
-while condition == True:           #runs till 'STOP' is entered
-    throwAway = input("Type out the situation here! Type 'STOP' and we will continue onward. Your situation: ")
-    if throwAway == "STOP":
+while condition:  # This runs until 'STOP' is entered
+    user_situation = input(
+        "Type out the situation here! Type STOP and we will "
+        + "continue onward. Your situation: ")
+    if user_situation == "STOP":
         break
     else:
-        fortuneCookie()
+        fortune_cookie()
+# The code above takes inputs and gives outputs as many times as the user
+# desires.  It will run until the user types STOP.
+# Python for Everybody.
+print()
+print("Moving on!", name + ",",
+      "have you ever wondered what caliber bullet you should use to shoot "
+      + "a target from a distance?")
 
-print("Moving on!", name +",", "have you ever wondered what caliber bullet you should use to take out a terrorist?")
-def gunDist(range):
+
+# The above code introduces the ballistic range calculator.
+# Python for Everybody.
+
+
+def gun_dist(range):
+    """
+This function takes in a distance and returns suggested caliber cartridge.
+    :param range: The distance is an integer measured in yards.
+    """
     if range >= 1000:
         print("You'll need either a .50 BMG cartridge or something bigger.")
-    elif range < 1000 and range > 300:
-        print("I think a 7.62 NATO cartridge will do ya.")
-    elif range <= 300 and range > 100:
-        print("5.56 NATO will do the trick")
+    elif 1000 > range > 300:
+        print("I think a 7.62 NATO cartridge will do the job.")
+    elif 300 >= range > 100:
+        print("5.56 NATO will do the trick.")
     else:
-        print("A 9mm cartridge would do you well")
+        print("A 9mm cartridge would do you well.")
+
+
+# The code above will take in a parameter and return a message detailing
+# what caliber should be chosen.
+# Python for Everybody & Forgotten Weapons were used.
+
+
 condition = True
-while condition == True:
+while condition:
     try:
-        range = int(input("What's the distance in yards of this bad guy? When you want to move on, set the distance to -90. Distance: "))
-    except:
-        print("Please put in a non-negative whole number, using actual numbers.")
+        range = int(input(  # The distance is entered.
+            "What's the distance in yards of the target? When you want "
+            + "to stop, set the distance"
+            + " as a negative number. Distance: "))
+    except ValueError:
+        print(
+                "Please put in a non-negative whole number, "
+                + "using actual numbers.")
         continue
-    if range == -90:
+    if range < 0:  # This is the parameter that breaks the loop.
         break
     else:
-        gunDist(range)
+        gun_dist(range)
+# The code above loops until a negative value is entered.
+# Python for Everybody.
+print("Adieu!")
